@@ -1,20 +1,47 @@
-<section class="container w-full mx-auto">
-    <h1 class="text-3xl text-center lowercase">An Introduction to Basic Predictions</h1>
-    <div class="container max-w-screen-2xl rounded-md dark:border-emerald-200 border border-spacing-2 px-2 py-2 my-5">
-        <p class="">
+@using StoryMaster.Shared.BasicPredictions.Models;
+
+@inject HttpClient _httpClient;
+
+<section class="container w-full mx-auto mt-8 bg-stone-950 rounded-lg px-10 py-10">
+    <h1
+        class="text-3xl text-center lowercase bg-clip-text text-transparent bg-gradient-to-r from-white to-teal-400 font-bold">
+        An Introduction to Basic Predictions</h1>
+    <div class="container bg-black drop-shadow-md max-w-screen-2xl rounded-md px-5 py-5 my-5">
+        <p>
             To start, I want to learn more about how to create a mathematical model for
             determining whether a fruit is safe to eat or not.
         </p>
         <p>
             For this imaginary scenario, we can imagine a fruit that has three characteristics:
         </p>
-        <ul class="ml-2">
-            <li>Spike length in mm</li>
-            <li>Spot area in mm^2</li>
-            <li>Edible as Y/N</li>
-        </ul>
-    </div>
-    <div class="">
 
+        <ul class="ml-2 w-48 text-purple-300">
+            <li class=" bg-slate-800 px-2 py-2 rounded-lg my-2">Spike length in mm</li>
+            <li class="bg-slate-800 px-2 py-2 rounded-lg my-2">Spot area in mm^2</li>
+            <li class="bg-slate-800 px-2 py-2 rounded-lg my-2">Edible as Y/N</li>
+        </ul>
+
+        <p>
+            Let's load in randomized data to get started
+        </p>
+    </div>
+    <div class="container bg-slate-800 drop-shadow-md max-w-screen-2xl rounded-md px-5 py-5 my-5">
+        <ApexChart TItem="SteamUserBehavior" Title="Scatter Sample">
+            <ApexPointSeries TItem="SteamUserBehavior" Items="inedibleFruits" Name="Inedible"
+                SeriesType="SeriesType.Scatter" XValue="@(e => e.)" YValue="@(e => e.SpikeLength)" />
+
+        </ApexChart>
     </div>
 </section>
+
+@code {
+
+    private List<SteamUserBehavior> fruits = new();
+    private List<SteamUserBehavior> inedibleFruits => fruits.Where(x => !x.IsDigestible).ToList();
+    private List<SteamUserBehavior> edibleFruits => fruits.Where(x => x.IsDigestible).ToList();
+
+    protected override async Task OnInitializedAsync()
+    {
+        fruits = await _httpClient.GetFromJsonAsync<List<SteamUserBehavior>>("basic-predictions/fruits") ?? new();
+    }
+}

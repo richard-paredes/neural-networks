@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoryMaster.Client", "src\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoryMaster.Server", "src\StoryMaster.Server\StoryMaster.Server.csproj", "{07BC8698-0589-4DF5-8F70-7F081B5FCBC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoryMaster.Shared", "src\StoryMaster.Shared\StoryMaster.Shared.csproj", "{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,9 +48,22 @@ Global
 		{07BC8698-0589-4DF5-8F70-7F081B5FCBC2}.Release|x64.Build.0 = Release|Any CPU
 		{07BC8698-0589-4DF5-8F70-7F081B5FCBC2}.Release|x86.ActiveCfg = Release|Any CPU
 		{07BC8698-0589-4DF5-8F70-7F081B5FCBC2}.Release|x86.Build.0 = Release|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Debug|x64.Build.0 = Debug|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Debug|x86.Build.0 = Debug|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Release|x64.ActiveCfg = Release|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Release|x64.Build.0 = Release|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Release|x86.ActiveCfg = Release|Any CPU
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{398AFADA-9F0B-4CBE-B109-8E350B1205ED} = {68518A90-3F16-4729-B139-9F1A0749587A}
 		{07BC8698-0589-4DF5-8F70-7F081B5FCBC2} = {68518A90-3F16-4729-B139-9F1A0749587A}
+		{BE25E6BD-88BD-425B-A6DC-9D4839132EDE} = {68518A90-3F16-4729-B139-9F1A0749587A}
 	EndGlobalSection
 EndGlobal
